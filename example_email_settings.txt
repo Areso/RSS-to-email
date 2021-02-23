@@ -1,0 +1,6 @@
+smtp.yandex.ru
+465
+test@yandex.ru
+password
+receiver@yandex.ru
+topic
