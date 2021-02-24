@@ -4,3 +4,4 @@ test@yandex.ru
 password
 receiver@yandex.ru
 topic
+There are new records:
