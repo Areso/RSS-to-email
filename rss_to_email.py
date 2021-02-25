@@ -22,12 +22,9 @@ def load_smtp_setings():
 def load_smtp_setings_from_file():
     cfgpath = "email_settings.txt"
     fconf = open(cfgpath, 'r')
-    try:
-        tconf = fconf.read()
-        fconf.close()
-        conf_list = tconf.split('\n')
-    except:
-        return "no email_settings.txt found and env variable is not set"
+    tconf = fconf.read()
+    fconf.close()
+    conf_list = tconf.split('\n')
     return conf_list[0], conf_list[1], conf_list[2], conf_list[3], conf_list[4], conf_list[5], conf_list[6]
 
 
