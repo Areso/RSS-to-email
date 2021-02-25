@@ -6,4 +6,8 @@ For the first start run
 ```python3 rss_to_email.py --coldstart```  
 to populate current item list from the RSS  
 The link to RSS source to parse located in ```rss_source.txt```  
+In case you prefer dockered application:  
+```docker build -t rss:1.7 .  
+docker run --env-file=.env --name=rss_to_email rss:1.7  
+docker start rss_to_email```  
 Put this script into cron, and you will be happy. Enjoy!

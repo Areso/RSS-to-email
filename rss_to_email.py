@@ -22,9 +22,12 @@ def load_smtp_setings():
 def load_smtp_setings_from_file():
     cfgpath = "email_settings.txt"
     fconf = open(cfgpath, 'r')
-    tconf = fconf.read()
-    fconf.close()
-    conf_list = tconf.split('\n')
+    try:
+        tconf = fconf.read()
+        fconf.close()
+        conf_list = tconf.split('\n')
+    except:
+        return "no email_settings.txt found and env variable is not set"
     return conf_list[0], conf_list[1], conf_list[2], conf_list[3], conf_list[4], conf_list[5], conf_list[6]
 
 
@@ -97,6 +100,7 @@ if __name__ == '__main__':
                         help="populate base before putting the script in cron",
                         action="store_true")
     args = parser.parse_args()
+    print("starting RSS to email script")
     if args.coldstart:
         cold_start = True
     else:
